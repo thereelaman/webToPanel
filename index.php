@@ -8,7 +8,7 @@
 <h1>Under Development</h1>
 <p>Be back soon!!</p>
 
-<p>Tested the automation.</p>
+<p>Automation test V2.</p>
 
 </body>
 </html>
