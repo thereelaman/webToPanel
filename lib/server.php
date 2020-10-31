@@ -102,8 +102,8 @@ if (isset($_POST['login_user'])) {
 
   if (count($errors) == 0) {
   	$query = "SELECT * FROM users WHERE username='$username'";
-  	$results = mysqli_query($mysqli, $query);
-  	if (mysqli_num_rows($results) == 1) {
+  	$result = mysqli_query($mysqli, $query);
+  	if (mysqli_num_rows($result) == 1) {
 
       $row = mysqli_fetch_assoc($result);
       if(password_verify($password, $row["password"])){
