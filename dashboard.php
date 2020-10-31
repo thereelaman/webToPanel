@@ -69,7 +69,7 @@
 			<div class="impress_inner">
 				<h2>Welcome back, <?php echo($_SESSION['username'])?>!!!</h2>
 				<p>Thank you for being with us.</p>
-				<p><h2>Your owned displays are:</h2></p>
+				<p><h2>The displays you own are:</h2></p>
 				<div class="container">
               		<?php 
 				
@@ -79,11 +79,11 @@
 						echo "<table border='1' class='table table-hover'><tr><th  style='color:white;'>Panel ID</th><th style='color:white;'>Panel Type</th><th style='color:white;'>Token<th/></tr>";
 						while ($panel = mysqli_fetch_row($result)){
 							echo "<tr><td><a class=\"primary_btn\"><span>";
-							echo ($panel["id"]);
+							echo ($panel['id']);
 							echo "</span></a></td><td style='color:white;'>";
-							echo ($panel["paneltype"]);
+							echo ($panel['paneltype']);
 							echo "</td><td style='color:white;'>";
-							echo ($panel["token"]);
+							echo ($panel['token']);
 							echo "</td></tr>";
 						}
 						echo "</table>";
