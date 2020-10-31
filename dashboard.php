@@ -83,7 +83,7 @@
 							echo "</span></a></td><td style='color:white;'>";
 							echo ($panel[1]);
 							echo "</td><td style='color:white;'>";
-							echo ($panel[2]);
+							echo ($panel[3]);
 							echo "</td></tr>";
 						}
 						echo "</table>";
