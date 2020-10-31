@@ -28,9 +28,6 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-reg100">
-				<!-- <div class="login100-pic js-tilt" data-tilt>
-					<img src="images/img-01.png" alt="IMG">
-				</div> -->
 
 				<form class="login100-form validate-form" method ="POST" action = "./register.php">
 					<span class="reg-form-title">
@@ -46,7 +43,7 @@
 					</div>
 
                     <div class="wrap-input100 validate-input" data-validate = "Username is required">
-						<input class="input100" type="text" name="userid" placeholder="Username" value="<?php echo $username; ?>">
+						<input class="input100" type="text" name="username" placeholder="Username" value="<?php echo $username; ?>">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-vcard" aria-hidden="true"></i>
