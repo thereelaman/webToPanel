@@ -31,7 +31,7 @@
 					<img src="./img/mainLogo.png" alt="IMG">
 				</div>
 
-				<form class="login100-form validate-form" method="POST" action="./index.php>
+				<form class="login100-form validate-form" method="POST" action="./index.php">
 					<span class="login100-form-title">
 						Login to the LEDPanel Portal
 					</span>
