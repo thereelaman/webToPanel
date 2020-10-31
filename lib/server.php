@@ -63,7 +63,6 @@ if (isset($_POST['reg_user'])) {
     $returnData = mysqli_query($mysqli, $query);
     if(mysqli_error($returnData))
       array_push($errors, "User couldn't be created.")
-    header('location: ../../../dashboard.php');
       
     $_SESSION['username'] = $username;
   	$_SESSION['active'] = 0; //0 until user activates their account with verify.php
