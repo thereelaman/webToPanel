@@ -62,7 +62,7 @@ if (isset($_POST['reg_user'])) {
   	$query = "INSERT INTO `users` (`username`, `name`, `email`, `hash`, `address`, `phone`, `password`, `active`) VALUES ('$username', '$name', '$email', '$hash', '$address', '$phone', '$password_1', '0')"; 
     $returnData = mysqli_query($mysqli, $query);
     if(mysqli_error($returnData))
-      array_push($errors, "User couldn't be created.")
+      array_push($errors, "User couldn't be created.");
       
     $_SESSION['username'] = $username;
   	$_SESSION['active'] = 0; //0 until user activates their account with verify.php
