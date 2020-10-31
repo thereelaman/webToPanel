@@ -59,7 +59,7 @@ if (isset($_POST['reg_user'])) {
   if (count($errors) == 0) {
   	$password = md5($password_1);//encrypt the password before saving in the database
     array_push($errors, "Error Count is Zero");
-  	$query = "INSERT INTO `users` (`username`, `name`, `email`, `hash`, `address`, `phone`, `password`, `active`) VALUES ('$username', '$name', '$email', '$hash', '$address', '$phone', '$password_1', '0');"; 
+  	$query = "INSERT INTO `users` (`username`, `name`, `email`, `hash`, `address`, `phone`, `password`, `active`) VALUES ('$username', '$name', '$email', '$hash', '$address', '$phone', '$password_1', '0')"; 
     $returnData = mysqli_query($mysqli, $query);
     if(mysqli_error($returnData))
       array_push($errors, "User couldn't be created.")
