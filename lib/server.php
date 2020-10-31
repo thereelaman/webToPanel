@@ -33,9 +33,8 @@ if (isset($_POST['reg_user'])) {
   if (empty($address)) { array_push($errors, "Address is required.");} 
   if (empty($phone)) { array_push($errors, "Phone number is required."); }
   if (empty($password_1)) { array_push($errors, "Password is required."); }
-  if (password_verify($password_1, $password_2)) {
-	array_push($errors, "The two passwords do not match.");
-  }
+  if (empty($password_2)) { array_push($errors, "Please re-enter your password."); }
+  if (password_verify($password_1, $password_2)) {array_push($errors, "The two passwords do not match.");}
 
   // first check the database to make sure 
   // a user does not already exist with the same username and/or email
@@ -44,7 +43,7 @@ if (isset($_POST['reg_user'])) {
   $user = mysqli_fetch_assoc($result);
   if ($user) { // if user exists
     if ($user['username'] === $username) {
-      array_push($errors, "username already exists. Please choose a new one.");
+      array_push($errors, "Username already exists. Please choose a new one.");
     }
 
     if ($user['email'] === $email) {
@@ -60,8 +59,10 @@ if (isset($_POST['reg_user'])) {
   if (count($errors) == 0) {
   	$password = md5($password_1);//encrypt the password before saving in the database
     array_push($errors, "Error Count is Zero");
-  	$query = "INSERT INTO `users` (`username`, `name`, `email`, `phone`, `address`, `password`, `hash`) VALUES ('$username', '$name', '$email', '$phone', '$address', '$password', '$hash')"; 
-    mysqli_query($mysqli, $query);
+  	$query = "INSERT INTO `users` (`username`, `name`, `email`, `hash`, `address`, `phone`, `password`, `active`) VALUES ('$username', '$name', '$email', '$hash', '$address', '$phone', '$password_1', '0');"; 
+    $returnData = mysqli_query($mysqli, $query);
+    if(mysqli_error($returnData))
+      array_push($errors, "User couldn't be created.")
     header('location: ../../../dashboard.php');
       
     $_SESSION['username'] = $username;
@@ -85,7 +86,7 @@ if (isset($_POST['reg_user'])) {
     http://thedisplay.studio/lib/verify.php?email='.$email.'&hash='.$hash;  
 
     mail( $to, $subject, $message_body );
-    header("location: ./dashboard.php");
+    header("location: ./index.php");
   }
 }
 
