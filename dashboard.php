@@ -79,11 +79,11 @@
 						echo "<table border='1' class='table table-hover'><tr><th  style='color:white;'>Panel ID</th><th style='color:white;'>Panel Type</th><th style='color:white;'>Token<th/></tr>";
 						while ($panel = mysqli_fetch_row($result)){
 							echo "<tr><td><a class=\"primary_btn\"><span>";
-							echo ($panel['id']);
+							echo ($panel[0]);
 							echo "</span></a></td><td style='color:white;'>";
-							echo ($panel['paneltype']);
+							echo ($panel[1]);
 							echo "</td><td style='color:white;'>";
-							echo ($panel['token']);
+							echo ($panel[2]);
 							echo "</td></tr>";
 						}
 						echo "</table>";
