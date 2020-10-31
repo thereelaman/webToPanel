@@ -102,10 +102,9 @@ if (isset($_POST['login_user'])) {
 
   if (count($errors) == 0) {
   	$query = "SELECT * FROM users WHERE username='$username'";
-  	$result = mysqli_query($mysqli, $query);
+    $result = mysqli_query($mysqli, $query);
+    $row = mysqli_fetch_assoc($result);
   	if (mysqli_num_rows($result) == 1) {
-
-      $row = mysqli_fetch_assoc($result);
       if(password_verify($password, $row["password"])){
   	    $_SESSION['username'] = $username;
   	    $_SESSION['logged_in'] = true;
@@ -114,7 +113,8 @@ if (isset($_POST['login_user'])) {
       else {
         array_push($errors, "The password appears to be incorrect. Plase try again.");
       }
-  	}else {
+    }
+    else {
   		array_push($errors, "The username/password combination appears to be incorrect. Plase try again.");
   	}
   }
