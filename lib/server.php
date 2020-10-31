@@ -21,7 +21,7 @@ if (isset($_POST['reg_user'])) {
   $email      = mysqli_real_escape_string($mysqli, $_POST['email']);
   $address    = mysqli_real_escape_string($mysqli, $_POST['address']);
   $phone      = mysqli_real_escape_string($mysqli, $_POST['phone']);
-  $password_1 = mysqli_real_escape_string($mysqli, password_hash($_POST['password_1'], PASSWORD_BCRYPT) );
+  $password_1 = mysqli_real_escape_string($mysqli, password_hash($_POST['password_1'], PASSWORD_BCRYPT) ); //encrypt the password before saving in the database
   $password_2 = mysqli_real_escape_string($mysqli, $_POST['password_2']);
   $hash       = substr(sha1(rand()), 0, 80);
 
@@ -57,11 +57,11 @@ if (isset($_POST['reg_user'])) {
 
   // Finally, register user if there are no errors in the form
   if (count($errors) == 0) {
-  	$password = md5($password_1);//encrypt the password before saving in the database
+  	$password = $password_1;
     array_push($errors, "Error Count is Zero");
   	$query = "INSERT INTO `users` (`username`, `name`, `email`, `hash`, `address`, `phone`, `password`, `active`) VALUES ('$username', '$name', '$email', '$hash', '$address', '$phone', '$password_1', '0')"; 
-    $returnData = mysqli_query($mysqli, $query);
-    if(mysqli_error($returnData))
+    mysqli_query($mysqli, $query);
+    if(mysqli_error($mysqli))
       array_push($errors, "User couldn't be created.");
       
     $_SESSION['username'] = $username;
@@ -92,8 +92,6 @@ if (isset($_POST['reg_user'])) {
 if (isset($_POST['login_user'])) {
   $username = mysqli_real_escape_string($mysqli, $_POST['username']);
   $password = mysqli_real_escape_string($mysqli, $_POST['password']);
-  array_push($errors, "username = $username");
-  array_push($errors, "password = $password");
 
   if (empty($username)) {
   	array_push($errors, "Username is required.");
@@ -103,13 +101,19 @@ if (isset($_POST['login_user'])) {
   }
 
   if (count($errors) == 0) {
-  	$password = md5($password);
-  	$query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
+  	$query = "SELECT * FROM users WHERE username='$username'";
   	$results = mysqli_query($mysqli, $query);
   	if (mysqli_num_rows($results) == 1) {
-  	  $_SESSION['username'] = $username;
-  	  $_SESSION['logged_in'] = true;
-  	  header('location: ../../../dashboard.php');
+
+      $row = mysqli_fetch_assoc($result);
+      if(password_verify($password, $row["password"])){
+  	    $_SESSION['username'] = $username;
+  	    $_SESSION['logged_in'] = true;
+        header('location: ../../../dashboard.php');
+      }
+      else {
+        array_push($errors, "The password appears to be incorrect. Plase try again.");
+      }
   	}else {
   		array_push($errors, "The username/password combination appears to be incorrect. Plase try again.");
   	}
