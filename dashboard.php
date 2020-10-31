@@ -73,7 +73,7 @@
 				<div class="container">
               		<?php 
 				
-						$query = "SELECT panels.id, paneltype FROM panelOwner, panels WHERE panelOwner.user='".$_SESSION['username']."' and panels.id = panelOwner.id "; 
+						$query = "SELECT panels.id, paneltype, token FROM panelOwner, panels WHERE panelOwner.user='".$_SESSION['username']."' and panels.id = panelOwner.id "; 
                 		$result = mysqli_query($mysqli, $query);
 				
 						echo "<table border='1' class='table table-hover'><tr><th  style='color:white;'>Panel ID</th><th style='color:white;'>Panel Type</th><th style='color:white;'>Token</th></tr>";
@@ -83,7 +83,7 @@
 							echo "</span></a></td><td style='color:white;'>";
 							echo ($panel[1]);
 							echo "</td><td style='color:white;'>";
-							echo ($panel[3]);
+							echo ($panel[2]);
 							echo "</td></tr>";
 						}
 						echo "</table>";
