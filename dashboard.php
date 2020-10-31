@@ -57,7 +57,7 @@
 							<li class="nav-item"><a class="nav-link" href="/lib/logout.php" name="logout_user">Log Out</a></li>
 						</ul>
 						<ul class="nav navbar-nav navbar-right">
-							<li class="nav-item"><a href="#" class="primary_btn text-uppercase">redeem</a></li>
+							<li class="nav-item"><a href="#" class="primary_btn text-uppercase">studio</a></li>
 						</ul>
 					</div>
 				</div>
@@ -67,18 +67,34 @@
 	<section class="impress_area">
 		<div class="container">
 			<div class="impress_inner">
-				<h2>Welcome back, <?php echo($_SESSION['userid'])?>!!!</h2>
+				<h2>Welcome back, <?php echo($_SESSION['username'])?>!!!</h2>
 				<p>Thank you for being with us.</p>
 				<p><h2>Your owned displays are:</h2>
-				<a class="primary_btn">
-          <span>
+				
               <?php 
                 $query = "SELECT panels.id, paneltype FROM panelOwner, panels WHERE panelOwner.username='".$_SESSION['username']."' and panels.id = panelOwner.id "; 
                 $result = mysqli_query($mysqli, $query);
-                $user = mysqli_fetch_assoc($result);
+				
+				echo "<table border='1'>";
+				while (mysqli_num_rows($result) != 0){
+					$panel = mysqli_fetch_assoc($result);
+					echo ("
+						<tr>
+							<td>
+								<a class=\"primary_btn\">
+						  		<span>
+								  $panel[\"id\"]
+						  		</span>
+								</a>
+							</td>
+							<td>$panel[\"type\"]</td>
+						</tr>
+					");
+					
+				}
+				echo "</table>";
+
               ?> 
-          </span>
-        </a>
        </p>
 			</div>
 		</div>
