@@ -80,7 +80,9 @@
 							echo "<tr><td><a class=\"primary_btn\"><span>";
 							echo ($panel["id"]);
 							echo "</span></a></td><td>";
-							echo ($panel["type"]);
+							echo ($panel["paneltype"]);
+							echo "</td><td>";
+							echo ($panel["token"]);
 							echo "</td></tr>";
 						}
 						echo "</table>";
