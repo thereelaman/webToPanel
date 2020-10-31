@@ -74,31 +74,19 @@
                 		$query = "SELECT panels.id, paneltype FROM panelOwner, panels WHERE panelOwner.user='".$_SESSION['username']."' and panels.id = panelOwner.id "; 
                 		$result1 = mysqli_query($mysqli, $query);
 				
-						echo ("
-							<table border='1'>
-								<tr>
-    								<th>Panel ID</th>
-    								<th>Panel Type</th>
-						  		</tr>
-							"):
-													  
-						while (mysqli_num_rows($result1) != 0){
-							$panel = mysqli_fetch_assoc($result1);
-							echo ("
-								<tr>
-									<td>
-										<a class=\"primary_btn\">
-								  		<span>
-										  $panel[\"id\"]
-								  		</span>
-										</a>
-									</td>
-									<td>$panel[\"type\"]</td>
-								</tr>
-							");
-
-						}
-						echo "</table>";
+						$query = "SELECT panels.id, paneltype FROM panelOwner, panels WHERE panelOwner.user='".$_SESSION['username']."' and panels.id = panelOwner.id "; 
+                	$result = mysqli_query($mysqli, $query);
+				
+					echo "<table border='1'><tr><th>Panel ID</th><th>Panel Type</th></tr>";
+					while (mysqli_num_rows($result1) != 0){
+						$panel = mysqli_fetch_assoc($result);
+						echo "<tr><td><a class=\"primary_btn\"><span>";
+						echo ($panel["id"]);
+						echo "</span></a></td><td>";
+						echo ($panel["type"]);
+						echo "</td></tr>";
+					}
+					echo "</table>";
 
               		?> 
 			</div>
