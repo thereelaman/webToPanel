@@ -23,7 +23,7 @@ if (isset($_POST['reg_user'])) {
   $phone      = mysqli_real_escape_string($mysqli, $_POST['phone']);
   $password_1 = mysqli_real_escape_string($mysqli, password_hash($_POST['password_1'], PASSWORD_BCRYPT) );
   $password_2 = mysqli_real_escape_string($mysqli, password_hash($_POST['password_2'], PASSWORD_BCRYPT) );
-  $hash       = 
+  $hash       = bin2hex(random_bytes(40));
 
   // form validation: ensure that the form is correctly filled ...
   // by adding (array_push()) corresponding error unto $errors array
