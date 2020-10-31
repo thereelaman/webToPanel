@@ -70,12 +70,13 @@
 				<h2>Welcome back, <?php echo($_SESSION['username'])?>!!!</h2>
 				<p>Thank you for being with us.</p>
 				<p><h2>Your owned displays are:</h2></p>
+				<div class="container">
               		<?php 
 				
 						$query = "SELECT panels.id, paneltype FROM panelOwner, panels WHERE panelOwner.user='".$_SESSION['username']."' and panels.id = panelOwner.id "; 
                 		$result = mysqli_query($mysqli, $query);
 				
-						echo "<table border='1'><tr><th>Panel ID</th><th>Panel Type</th></tr>";
+						echo "<table border='1' class='table table-hover'><tr><th>Panel ID</th><th>Panel Type</th><th>Token<th/></tr>";
 						while ($panel = mysqli_fetch_row($result)){
 							echo "<tr><td><a class=\"primary_btn\"><span>";
 							echo ($panel["id"]);
@@ -87,7 +88,8 @@
 						}
 						echo "</table>";
 
-              		?> 
+              		?>
+				</div> 
 			</div>
 		</div>
 	</section>
