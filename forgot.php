@@ -1,76 +1,71 @@
-<?php include('./lib/server.php') ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>LEDPanel Portal Login</title>
+	<title>Forgot Password/Username?</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="./img/icons/favicon.ico"/>
+	<link rel="icon" type="image/png" href="/img/icons/favicon.ico"/>
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="./vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/vendor/bootstrap/css/bootstrap.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="./fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="./vendor/animate/animate.css">
+	<link rel="stylesheet" type="text/css" href="/vendor/animate/animate.css">
 <!--===============================================================================================-->	
-	<link rel="stylesheet" type="text/css" href="./vendor/css-hamburgers/hamburgers.min.css">
+	<link rel="stylesheet" type="text/css" href="/vendor/css-hamburgers/hamburgers.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="./vendor/select2/select2.min.css">
+	<link rel="stylesheet" type="text/css" href="/vendor/select2/select2.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="./css/util.css">
-	<link rel="stylesheet" type="text/css" href="./css/main.css">
+	<link rel="stylesheet" type="text/css" href="/css/util.css">
+	<link rel="stylesheet" type="text/css" href="/css/main.css">
 <!--===============================================================================================-->
-
 </head>
 <body>
+	
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
 				<div class="login100-pic js-tilt" data-tilt>
-					<img src="./img/mainLogo.png" alt="IMG">
+					<img src="img/mainLogo.png" alt="IMG">
 				</div>
 
-				<form class="login100-form validate-form" method="POST" action="./index.php>
+				<form class="login100-form validate-form">
 					<span class="login100-form-title">
-						Login to the LEDPanel Portal
+						Enter your email ID to reset password
 					</span>
 
-					<div class="wrap-input100 validate-input" data-validate = "Valid UserID is required: eg:- JohDoe420">
-						<input class="input100" type="text" name="userid" placeholder="UserID">
+					<div class="wrap-input100 validate-input" data-validate = "Enter your email ID">
+						<input class="input100" type="text" name="email" placeholder="Email">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
-							<i class="fa fa-vcard" aria-hidden="true"></i>
-						</span>
-					</div>
-
-
-					<div class="wrap-input100 validate-input" data-validate = "Password is required!">
-						<input class="input100" type="password" name="password" placeholder="Password">
-						<span class="focus-input100"></span>
-						<span class="symbol-input100">
-							<i class="fa fa-lock" aria-hidden="true"></i>
+							<i class="fa fa-envelope" aria-hidden="true"></i>
 						</span>
 					</div>
 					
 					<div class="container-login100-form-btn">
-						<button class="login100-form-btn" type="submit" name="login_user">
-							Login
+						<button class="login100-form-btn">
+							Reset Password
 						</button>
 					</div>
 
-					<div class="text-center p-t-12">
+					<!-- <div class="text-center p-t-12">
 						<span class="txt1">
 							Forgot
 						</span>
-						<a class="txt2" href="./forgot.php">
+						<a class="txt2" href="forgot.php">
 							Username / Password?
 						</a>
-					</div>
+					</div> -->
 
 					<div class="text-center p-t-136">
-						<a class="txt2" href="./register.php">
-							Create an account!
+						<a class="txt2" href="register.php">
+							Don't have an account?
+							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+                        </a>
+                        <br/>
+                        <a class="txt2" href="index.php">
+							Login to existing account
 							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
 						</a>
 					</div>
@@ -83,21 +78,21 @@
 
 	
 <!--===============================================================================================-->	
-	<script src="./vendor/jquery/jquery-3.2.1.min.js"></script>
+	<script src="/vendor/jquery/jquery-3.2.1.min.js"></script>
 <!--===============================================================================================-->
-	<script src="./vendor/bootstrap/js/popper.js"></script>
-	<script src="./vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="/vendor/bootstrap/js/popper.js"></script>
+	<script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
 <!--===============================================================================================-->
-	<script src="./vendor/select2/select2.min.js"></script>
+	<script src="/vendor/select2/select2.min.js"></script>
 <!--===============================================================================================-->
-	<script src="./vendor/tilt/tilt.jquery.min.js"></script>
+	<script src="/vendor/tilt/tilt.jquery.min.js"></script>
 	<script >
 		$('.js-tilt').tilt({
 			scale: 1.1
 		})
 	</script>
 <!--===============================================================================================-->
-	<script src="./js/main.js"></script>
+	<script src="/js/main.js"></script>
 
 </body>
 </html>
