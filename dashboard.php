@@ -76,7 +76,7 @@
 						$query = "SELECT panels.id, paneltype FROM panelOwner, panels WHERE panelOwner.user='".$_SESSION['username']."' and panels.id = panelOwner.id "; 
                 		$result = mysqli_query($mysqli, $query);
 				
-						echo "<table border='1' class='table table-hover'><tr><th  style='color:white;'>Panel ID</th><th style='color:white;'>Panel Type</th><th style='color:white;'>Token<th/></tr>";
+						echo "<table border='1' class='table table-hover'><tr><th  style='color:white;'>Panel ID</th><th style='color:white;'>Panel Type</th><th style='color:white;'>Token</th></tr>";
 						while ($panel = mysqli_fetch_row($result)){
 							echo "<tr><td><a class=\"primary_btn\"><span>";
 							echo ($panel[0]);
