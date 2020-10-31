@@ -69,13 +69,19 @@
 			<div class="impress_inner">
 				<h2>Welcome back, <?php echo($_SESSION['username'])?>!!!</h2>
 				<p>Thank you for being with us.</p>
-				<p><h2>Your owned displays are:</h2>
-				<p>
+				<p><h2>Your owned displays are:</h2></p>
               		<?php 
-                		$query = "SELECT panels.id, paneltype FROM panelOwner, panels WHERE panelOwner.username='".$_SESSION['username']."' and panels.id = panelOwner.id "; 
+                		$query = "SELECT panels.id, paneltype FROM panelOwner, panels WHERE panelOwner.user='".$_SESSION['username']."' and panels.id = panelOwner.id "; 
                 		$result1 = mysqli_query($mysqli, $query);
 				
-						echo "<table border='1'>";
+						echo ("
+							<table border='1'>
+								<tr>
+    								<th>Panel ID</th>
+    								<th>Panel Type</th>
+						  		</tr>
+							"):
+													  
 						while (mysqli_num_rows($result1) != 0){
 							$panel = mysqli_fetch_assoc($result1);
 							echo ("
@@ -95,7 +101,6 @@
 						echo "</table>";
 
               		?> 
-      			</p>
 			</div>
 		</div>
 	</section>
