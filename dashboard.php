@@ -41,7 +41,7 @@
 	<header class="header_area">
 		<div class="main_menu">
 			<nav class="navbar navbar-expand-lg navbar-light">
-				<div class="container" style="padding-top: 20px !important;">
+				<div class="container" style="padding-top: 16px !important;">
 					<!-- Brand and toggle get grouped for better mobile display -->
 					<a class="navbar-brand logo_h" href="dashboard.php"><img src="img/logo.png" alt=""></a>
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -56,7 +56,7 @@
 							<!--<li class="nav-item active"><a class="nav-link" href="dashboard.php">Home</a></li>
 							<li class="nav-item"><a class="nav-link" href="/lib/logout.php" name="logout_user">Log Out</a></li>-->
 						</ul>
-						<ul class="nav navbar-nav navbar-right" style="padding-top: 20px !important;">
+						<ul class="nav navbar-nav navbar-right">
 							<li class="nav-item" ><a href="/lib/logout.php" class="primary_btn text-uppercase">log out</a></li>
 						</ul>
 					</div>
