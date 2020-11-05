@@ -56,7 +56,7 @@
 							<!--<li class="nav-item active"><a class="nav-link" href="dashboard.php">Home</a></li>
 							<li class="nav-item"><a class="nav-link" href="/lib/logout.php" name="logout_user">Log Out</a></li>-->
 						</ul>
-						<ul class="nav navbar-nav navbar-right">
+						<ul class="nav navbar-nav navbar-right" style="padding-top: 20px !important;">
 							<li class="nav-item" ><a href="/lib/logout.php" class="primary_btn text-uppercase">log out</a></li>
 						</ul>
 					</div>
