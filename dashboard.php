@@ -53,11 +53,11 @@
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
 						<ul class="nav navbar-nav menu_nav justify-content-center">
-							<li class="nav-item active"><a class="nav-link" href="dashboard.php">Home</a></li>
-							<li class="nav-item"><a class="nav-link" href="/lib/logout.php" name="logout_user">Log Out</a></li>
+							<!--<li class="nav-item active"><a class="nav-link" href="dashboard.php">Home</a></li>
+							<li class="nav-item"><a class="nav-link" href="/lib/logout.php" name="logout_user">Log Out</a></li>-->
 						</ul>
 						<ul class="nav navbar-nav navbar-right">
-							<li class="nav-item"><a href="#" class="primary_btn text-uppercase">studio</a></li>
+							<li class="nav-item"><a href="/lib/logout.php" class="primary_btn text-uppercase">log out</a></li>
 						</ul>
 					</div>
 				</div>
@@ -73,10 +73,10 @@
 				<div class="container">
               		<?php 
 				
-						$query = "SELECT panels.id, paneltype, token FROM panelOwner, panels WHERE panelOwner.user='".$_SESSION['username']."' and panels.id = panelOwner.id "; 
+						$query = "SELECT panels.id, paneltype, token, temperature, brightness FROM panelOwner, panels WHERE panelOwner.user='".$_SESSION['username']."' and panels.id = panelOwner.id "; 
                 		$result = mysqli_query($mysqli, $query);
 				
-						echo "<table border='1' class='table table-hover'><tr><th  style='color:white;'>Panel ID</th><th style='color:white;'>Panel Type</th><th style='color:white;'>Token</th></tr>";
+						echo "<table border='1' class='table table-hover'><tr><th  style='color:white;'>Panel ID</th><th style='color:white;'>Panel Type</th><th style='color:white;'>Token</th><th style='color:white;'>Temperature</th><th style='color:white;'>Brightness (%)</th></tr>";
 						while ($panel = mysqli_fetch_row($result)){
 							echo "<tr><td><a class=\"primary_btn\"><span>";
 							echo ($panel[0]);
@@ -84,6 +84,10 @@
 							echo ($panel[1]);
 							echo "</td><td style='color:white;'>";
 							echo ($panel[2]);
+							echo "</td><td style='color:white;'>";
+							echo ($panel[3]);
+							echo "</td><td style='color:white;'>";
+							echo ($panel[4]);
 							echo "</td></tr>";
 						}
 						echo "</table>";
