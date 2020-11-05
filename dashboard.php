@@ -53,12 +53,11 @@
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
 						<ul class="nav navbar-nav menu_nav justify-content-center">
-							<li class="nav-item active"><a class="nav-link" href=""></a></li>
 							<!--<li class="nav-item active"><a class="nav-link" href="dashboard.php">Home</a></li>
 							<li class="nav-item"><a class="nav-link" href="/lib/logout.php" name="logout_user">Log Out</a></li>-->
 						</ul>
 						<ul class="nav navbar-nav navbar-right">
-							<li class="nav-item"><a href="/lib/logout.php" class="primary_btn text-uppercase">log out</a></li>
+							<li class="nav-item" style="padding:1em 0em 0em 0em"><a href="/lib/logout.php" class="primary_btn text-uppercase">log out</a></li>
 						</ul>
 					</div>
 				</div>
