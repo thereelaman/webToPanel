@@ -68,11 +68,9 @@
 			<div class="impress_inner">
 
                 <?php
-                    
+                    echo "<p>You are working on the $params['paneltype'] panel with id = $params['id']: </p>"
                 ?>
 
-				<p>You are working on the <?php echo"$params['paneltype']":?> panel with id = <?php echo"$params['id']":?>.</p>
-				<p><h2>:</h2></p>
 			</div>
 		</div>
 	</section>
