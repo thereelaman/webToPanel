@@ -60,16 +60,16 @@
 	<section class="impress_area">
 		<div class="container">
 			<div class="impress_inner">
-				<p>
+				<h1>
                 	<?php
 
 						echo "You are working on the ";
 						echo $_GET["paneltype"];
-						echo "panel with id =";
+						echo " panel with id = ";
 						echo $_GET["id"];
-						echo ": ";
+						echo " : ";
                 	?>
-				</p>
+				</h1>
 
 			</div>
 		</div>
