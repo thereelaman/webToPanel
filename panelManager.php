@@ -43,8 +43,10 @@
 					</button>
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+					<ul class="nav navbar-nav menu_nav justify-content-center">
+						</ul>
 						<ul class="nav navbar-nav navbar-right">
-							<li class="nav-item" ><a href="" class="primary_btn text-uppercase">upload</a></li>
+							<li class="nav-item" ><a href="/lib/logout.php" class="primary_btn text-uppercase">log out</a></li>
 						</ul>
 					</div>
 				</div>
@@ -59,9 +61,18 @@
 					echo $_GET["paneltype"];
 					echo " panel with id = ";
 					echo $_GET["id"];
-					echo " : ";
+					echo ". <br>And the image currently being displayed is:  ";
                	?>
 			</h1>
+
+			<form method="POST" action="./panelManager.php" enctype="multipart/form-data"> 
+			<p>Select a new image to upload. The image must match the size on your panel (ie. a 32x32 panel needs a 32x32 pixel image.)</p>
+				<input type="file" name="uploadfile" value=""/> 
+      			<div> 
+				  <a class="primary_btn" href=""><span>Upload</span>
+        		</div> 
+  			</form> 
+
 		</div>
 	</section>
 </body>
