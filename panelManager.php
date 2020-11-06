@@ -59,19 +59,15 @@
 	</header>
 	<section class="impress_area">
 		<div class="container">
-			<div class="impress_inner">
-				<h1>
-                	<?php
-
-						echo "You are working on the ";
-						echo $_GET["paneltype"];
-						echo " panel with id = ";
-						echo $_GET["id"];
-						echo " : ";
-                	?>
-				</h1>
-
-			</div>
+			<h1>
+               	<?php
+					echo "You are working on the ";
+					echo $_GET["paneltype"];
+					echo " panel with id = ";
+					echo $_GET["id"];
+					echo " : ";
+               	?>
+			</h1>
 		</div>
 	</section>
 </body>
