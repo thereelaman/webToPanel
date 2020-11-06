@@ -53,7 +53,7 @@
 	</header>
 	<section class="impress_area">
 		<div class="container">
-			<h1>
+			<h1 style = "color:white;" >
                	<?php
 					echo "You are working on the ";
 					echo $_GET["paneltype"];
