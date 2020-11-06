@@ -60,20 +60,22 @@
 	<section class="impress_area">
 		<div class="container">
 			<div class="impress_inner">
-
-                <?php
-					$url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://" . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'];
-					$url_components = parse_url($url); 
+				<p>
+                	<?php
+						$url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://" . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'];
+						$url_components = parse_url($url); 
+						echo $url;
 				  
-					//store the url parameters in the $params variable
-					parse_str($url_components['query'], $params);
+						//store the url parameters in the $params variable
+						parse_str($url_components['query'], $params);
 
-					echo "<p>You are working on the ";
-					echo $params['paneltype'];
-					echo "panel with id =";
-					echo $params['id'];
-					echo ": </p>";
-                ?>
+						echo "You are working on the ";
+						echo $params['paneltype'];
+						echo "panel with id =";
+						echo $params['id'];
+						echo ": ";
+                	?>
+				</p>
 
 			</div>
 		</div>
