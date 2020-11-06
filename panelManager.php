@@ -62,17 +62,11 @@
 			<div class="impress_inner">
 				<p>
                 	<?php
-						$url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://" . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'];
-						$url_components = parse_url($url); 
-						echo $url;
-				  
-						//store the url parameters in the $params variable
-						parse_str($url_components['query'], $params);
 
 						echo "You are working on the ";
-						echo $params['paneltype'];
+						echo $_GET["paneltype"];
 						echo "panel with id =";
-						echo $params['id'];
+						echo $_GET["id"];
 						echo ": ";
                 	?>
 				</p>
