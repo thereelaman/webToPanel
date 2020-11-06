@@ -3,6 +3,12 @@
 
   include('./lib/db.php');
 
+  $url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://" . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'];
+  $url_components = parse_url($url); 
+
+  //store the url parameters in the $params variable
+  parse_str($url_components['query'], $params);
+
   if (!$_SESSION['logged_in']) { 
   	$_SESSION['msg'] = "You must log in first!";
   	header('location: ../../index.php');
@@ -49,10 +55,6 @@
 					</button>
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
-						<ul class="nav navbar-nav menu_nav justify-content-center">
-							<!--<li class="nav-item active"><a class="nav-link" href="dashboard.php">Home</a></li>
-							<li class="nav-item"><a class="nav-link" href="/lib/logout.php" name="logout_user">Log Out</a></li>-->
-						</ul>
 						<ul class="nav navbar-nav navbar-right">
 							<li class="nav-item" ><a href="" class="primary_btn text-uppercase">upload</a></li>
 						</ul>
@@ -66,11 +68,10 @@
 			<div class="impress_inner">
 
                 <?php
-                    $link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://" . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'];
+                    
                 ?>
 
-				<h2>Hello, <?php echo($_SESSION['username'])?>!!!</h2>
-				<p>The display you are working on is:</p>
+				<p>You are working on the <?php echo"$params['paneltype']":?> panel with id = <?php echo"$params['id']":?>.</p>
 				<p><h2>:</h2></p>
 			</div>
 		</div>

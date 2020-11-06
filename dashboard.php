@@ -78,7 +78,7 @@
 				
 						echo "<table border='1' class='table table-hover'><tr><th  style='color:white;'>Panel ID</th><th style='color:white;'>Panel Type</th><th style='color:white;'>Token</th><th style='color:white;'>Temperature</th><th style='color:white;'>Brightness (%)</th></tr>";
 						while ($panel = mysqli_fetch_row($result)){
-							echo "<tr><td><a class=\"primary_btn\" href=\"/panelManager.php?id=$panel[0]\"><span>";
+							echo "<tr><td><a class=\"primary_btn\" href=\"/panelManager.php?id=$panel[0]\"&paneltype=$panel[1]><span>";
 							echo ($panel[0]);
 							echo "</span></a></td><td style='color:white;'>";
 							echo ($panel[1]);
