@@ -31,13 +31,7 @@
 	<link rel="stylesheet" href="css/style.css">
 </head>
 
-<body{
-    position: fixed; 
-    overflow: hidden;
-	width: 100%;
-	height: 100%;
-}>
-
+<body>
 	<header class="header_area">
 		<div class="main_menu">
 			<nav class="navbar navbar-expand-lg navbar-light">
