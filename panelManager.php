@@ -3,12 +3,6 @@
 
   include('./lib/db.php');
 
-  $url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://" . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'];
-  $url_components = parse_url($url); 
-
-  //store the url parameters in the $params variable
-  parse_str($url_components['query'], $params);
-
   if (!$_SESSION['logged_in']) { 
   	$_SESSION['msg'] = "You must log in first!";
   	header('location: ../../index.php');
@@ -68,7 +62,13 @@
 			<div class="impress_inner">
 
                 <?php
-					echo "<p>You are working on the";
+					$url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://" . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'];
+					$url_components = parse_url($url); 
+				  
+					//store the url parameters in the $params variable
+					parse_str($url_components['query'], $params);
+
+					echo "<p>You are working on the ";
 					echo $params['paneltype'];
 					echo "panel with id =";
 					echo $params['id'];
