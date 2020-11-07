@@ -26,7 +26,7 @@
 	$targetFile =  $folder.basename($filename);
   
 	//update the image in the database
-    $query = "UPDATE panel SET data = '$filename' WHERE panels.id = ".$_SESSION['id']; 
+    $query = "UPDATE panels SET data = '$filename' WHERE panels.id = ".$_SESSION['id']; 
   	mysqli_query($mysqli, $query) or die(mysqli_error($mysqli)); 
           
     // Now let's move the uploaded image into the folder: image 
