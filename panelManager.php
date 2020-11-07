@@ -1,6 +1,6 @@
 <?php 
   session_start();
-  $hasThePanelChanged = isset($_GET['id']) & (isset($_SESSION['id']) != isset($_GET['id']);
+  $hasThePanelChanged = isset($_GET['id']) & (isset($_SESSION['id']) != isset($_GET['id']));
   $isThereNoSessionData = !isset($_SESSION['id']) & !isset($_SESSION['paneltype']) & !isset($_SESSION['token']);
   
   if ($hasThePanelChanged | $isThereNoSessionData) {
