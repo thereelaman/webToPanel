@@ -69,10 +69,10 @@
 				<p style="color:white;">Select a new image to upload. The image must match the size on your panel (ie. a 32x32 panel needs a 32x32 pixel image.)</p>
       			<div class="container"> 
 					<div class="d-table-cell w-100">
-        				<button class="primary_btn" type="submit" name="upload">Upload</button>
+						<input type="file" name="uploadfile" value=""/>
 					</div>
 					<div class="d-table-cell align-middle">
-						<input type="file" name="uploadfile" value=""/>
+						<button class="primary_btn" type="submit" name="upload">Upload</button>
 					</div>
         		</div> 
   			</form> 
