@@ -1,5 +1,13 @@
 <?php 
-  session_start(); 
+  session_start();
+  $hasThePanelChanged = isset($_GET['id']) & (isset($_SESSION['id']) != isset($_GET['id']);
+  $isThereNoSessionData = !isset($_SESSION['id']) & !isset($_SESSION['paneltype']) & !isset($_SESSION['token']);
+  
+  if ($hasThePanelChanged | $isThereNoSessionData) {
+	$_SESSION['id'] = $_GET['id'];
+	$_SESSION['paneltype'] = $_GET['paneltype'];
+	$_SESSION['token'] = $_GET['token'];
+  }
 
   include('./lib/db.php');
   $msg = "";
@@ -17,7 +25,7 @@
 	$targetFile =  $folder.basename($filename);
   
 	//update the image in the database
-    $query = "UPDATE panel SET data = '$filename' WHERE panels.id ='".$GET['id']."'"; 
+    $query = "UPDATE panel SET data = '$filename' WHERE panels.id ='".$_SESSION['id']."'"; 
   	mysqli_query($msqli, $query); 
           
     // Now let's move the uploaded image into the folder: image 
@@ -79,12 +87,12 @@
 			<h1 style = "color:white;" >
                	<?php
 					echo "You are working on the ";
-					echo $_GET["paneltype"];
+					echo $_SESSION['paneltype'];
 					echo " panel with id = ";
-					echo $_GET["id"];
+					echo $_SESSION['id'];
 					echo ". ";
 
-					$query = "SELECT data FROM panels WHERE id = '".$GET['id']."'";
+					$query = "SELECT data FROM panels WHERE id = '".$_SESSION['id']."'";
 					$result = mysqli_query($msqli, $query);
 					$row = mysqli_fetch_assoc($result);
 
