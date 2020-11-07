@@ -83,7 +83,7 @@
 					echo $_GET["id"];
 					echo ". ";
 
-					$query = "SELECT data FROM panels WHERE id = '$GET['id']'";
+					$query = "SELECT data FROM panels WHERE id = '".$GET['id']."'";
 					$result = mysqli_query($msqli, $query);
 					$row = mysqli_fetch_assoc($result);
 
