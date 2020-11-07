@@ -67,9 +67,15 @@
 
 			<form method="POST" action="./panelManager.php" enctype="multipart/form-data"> 
 				<p style="color:white;">Select a new image to upload. The image must match the size on your panel (ie. a 32x32 panel needs a 32x32 pixel image.)</p>
-				<input style="color:white" type="file" name="uploadfile" value=""/> 
       			<div> 
-				  <button class="primary_btn" type="submit" name="upload">Upload</button> 
+					<div class="pull-left" style="margin-right:5px">
+        				<button class="primary_btn" type="submit" name="upload">Upload</button>
+    				</div>
+					<div>
+        				<div class="input-group">
+							<input style="color:white" type="file" name="uploadfile" value=""/> 
+  						</div>
+					</div>
         		</div> 
   			</form> 
 
