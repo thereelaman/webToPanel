@@ -69,7 +69,7 @@
 				<p style="color:white;">Select a new image to upload. The image must match the size on your panel (ie. a 32x32 panel needs a 32x32 pixel image.)</p>
       			<div class="container"> 
 					<div class="form-inline">
-						<input class="primary_btn" style="color:white" type="file" name="uploadfile" value=""/>
+						<input style="color:white" type="file" name="uploadfile" value=""/>
 						<button class="primary_btn" type="submit" name="upload">Upload</button>
 					</div>
         		</div> 
