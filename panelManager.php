@@ -9,8 +9,9 @@
 	$_SESSION['id'] = $_GET['id'];
 	$_SESSION['paneltype'] = $_GET['paneltype'];
 	$_SESSION['token'] = $_GET['token'];
-	echo $_SESSION['id'];
   }
+
+  echo $_SESSION['id'];
 
   $msg = "";
 
