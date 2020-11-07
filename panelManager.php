@@ -85,7 +85,7 @@
 	</header>
 	<section class="impress_area">
 		<div class="container">
-			<h1 style = "color:white;" >
+			<h1 style = "color:black;" >
                	<?php
 					echo "You are working on the ";
 					echo $_SESSION['paneltype'];
