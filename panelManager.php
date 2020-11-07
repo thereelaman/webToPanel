@@ -83,7 +83,7 @@
 			</nav>
 		</div>
 	</header>
-	<section class="impress_area">
+	<section class="impress_area" style = "align-items:flex-start;">
 		<div class="container">
 			<h1 style = "color:black;" >
                	<?php
