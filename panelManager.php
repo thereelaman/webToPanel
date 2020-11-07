@@ -11,8 +11,6 @@
 	$_SESSION['token'] = $_GET['token'];
   }
 
-  echo $_SESSION['id'];
-
   $msg = "";
 
   if (!$_SESSION['logged_in']) { 
@@ -28,7 +26,7 @@
 	$targetFile =  $folder.basename($filename);
   
 	//update the image in the database
-    $query = "UPDATE panel SET data = '$filename' WHERE panels.id ='".$_SESSION['id']."'"; 
+    $query = "UPDATE panel SET data = '$filename' WHERE panels.id = ".$_SESSION['id']; 
   	mysqli_query($mysqli, $query); 
           
     // Now let's move the uploaded image into the folder: image 
@@ -95,7 +93,7 @@
 					echo $_SESSION['id'];
 					echo ". ";
 
-					$query = "SELECT data FROM panels WHERE id = '".$_SESSION['id']."'";
+					$query = "SELECT data FROM panels WHERE id = ".$_SESSION['id'];
 					$result = mysqli_query($mysqli, $query);
 					$row = mysqli_fetch_assoc($result);
 
