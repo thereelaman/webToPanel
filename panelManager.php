@@ -99,7 +99,7 @@
 
 					if ((mysqli_num_rows($result) == 1) and !is_null($row['data']))	{				  
 						echo "<br>And the image currently being displayed is: ";
-						echo "<img src=\"userimages/";
+						echo "<img style=\"width: 100%;height: auto;\" src=\"userimages/";
 						echo $row['data'];
 						echo "\" alt=\"The image being displayed on the panel.\">";
 					}
