@@ -2,10 +2,10 @@
   session_start();
   include('./lib/db.php');
 
-  $hasThePanelChanged = isset($_GET['id']) & (isset($_SESSION['id']) != isset($_GET['id']));
-  $isThereNoSessionData = !isset($_SESSION['id']) & !isset($_SESSION['paneltype']) & !isset($_SESSION['token']);
+  $hasThePanelChanged = (isset($_GET['id']) and isset($_SESSION['id'])) and (($_SESSION['id'] != $_GET['id']);
+  $isThereNoSessionData = !isset($_SESSION['id']) and !isset($_SESSION['paneltype']) and !isset($_SESSION['token']);
   
-  if ($hasThePanelChanged | $isThereNoSessionData) {
+  if ($hasThePanelChanged or $isThereNoSessionData) {
 	$_SESSION['id'] = $_GET['id'];
 	$_SESSION['paneltype'] = $_GET['paneltype'];
 	$_SESSION['token'] = $_GET['token'];
