@@ -89,7 +89,7 @@
 
 					if (mysqli_num_rows($result) == 1)	{				  
 						echo "<br>And the image currently being displayed is:  ";
-						echo "<img src=\"userimages/$row['data']\" alt=\"The Image being displayed on the panel.\">";
+						echo "<img src=\"userimages/".$row['data']."\" alt=\"The Image being displayed on the panel.\">";
 					}
 					else{
 						  echo "<br>And there's no image currently being displayed on your panel. Please upload an image!";
