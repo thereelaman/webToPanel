@@ -1,5 +1,7 @@
 <?php 
   session_start();
+  include('./lib/db.php');
+  
   $hasThePanelChanged = isset($_GET['id']) & (isset($_SESSION['id']) != isset($_GET['id']));
   $isThereNoSessionData = !isset($_SESSION['id']) & !isset($_SESSION['paneltype']) & !isset($_SESSION['token']);
   
@@ -9,7 +11,6 @@
 	$_SESSION['token'] = $_GET['token'];
   }
 
-  include('./lib/db.php');
   $msg = "";
 
   if (!$_SESSION['logged_in']) { 
