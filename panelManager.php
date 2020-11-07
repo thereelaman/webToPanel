@@ -97,7 +97,7 @@
 					$result = mysqli_query($mysqli, $query);
 					$row = mysqli_fetch_assoc($result);
 
-					if (mysqli_num_rows($result) == 1)	{				  
+					if ((mysqli_num_rows($result) == 1) and !is_null($row['data']))	{				  
 						echo "<br>And the image currently being displayed is: ";
 						echo "<img src=\"userimages/";
 						echo $row['data'];
