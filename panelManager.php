@@ -2,7 +2,7 @@
   session_start();
   include('./lib/db.php');
 
-  $hasThePanelChanged = (isset($_GET['id']) and isset($_SESSION['id'])) and (($_SESSION['id'] != $_GET['id']);
+  $hasThePanelChanged = (isset($_GET['id']) and isset($_SESSION['id'])) and (($_SESSION['id'] != $_GET['id']));
   $isThereNoSessionData = !isset($_SESSION['id']) and !isset($_SESSION['paneltype']) and !isset($_SESSION['token']);
   
   if ($hasThePanelChanged or $isThereNoSessionData) {
