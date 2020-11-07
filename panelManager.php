@@ -16,7 +16,7 @@
     $folder = "userimages/".$filename; 
   
 	//update the image in the database
-    $query = "UPDATE `panels` SET `data` = '$filename' WHERE `panels`.`id` = $GET['id']"; 
+    $query = "UPDATE panel` SET data = '$filename' WHERE panels.id = '$GET['id']'"; 
   	mysqli_query($msqli, $query); 
           
     // Now let's move the uploaded image into the folder: image 
@@ -83,7 +83,7 @@
 					echo $_GET["id"];
 					echo ". ";
 
-					$query = "SELECT data FROM `panels` WHERE id = $GET['id']";
+					$query = "SELECT data FROM panels WHERE id = '$GET['id']'";
 					$result = mysqli_query($msqli, $query);
 					$row = mysqli_fetch_assoc($result);
 
