@@ -83,9 +83,9 @@
 			</nav>
 		</div>
 	</header>
-	<section class="impress_area" style = "align-items:flex-start;">
+	<section class="impress_area">
 		<div class="container">
-			<h1 style = "color:black;" >
+			<h1 style = "color:white;" >
                	<?php
 					echo "You are working on the ";
 					echo $_SESSION['paneltype'];
@@ -98,8 +98,8 @@
 					$row = mysqli_fetch_assoc($result);
 
 					if ((mysqli_num_rows($result) == 1) and !is_null($row['data']))	{				  
-						echo "<br>And the image currently being displayed is: ";
-						echo "<img style=\"width: 100%;height: auto;\" src=\"userimages/";
+						echo "<br>And the image currently being displayed is: <br>";
+						echo "<img style=\"width: auto;height: 400px;\" src=\"userimages/";
 						echo $row['data'];
 						echo "\" alt=\"The image being displayed on the panel.\">";
 					}
