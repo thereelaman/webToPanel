@@ -2,11 +2,31 @@
   session_start(); 
 
   include('./lib/db.php');
+  $msg = "";
 
   if (!$_SESSION['logged_in']) { 
   	$_SESSION['msg'] = "You must log in first!";
   	header('location: ../../index.php');
   }
+
+  if (isset($_POST['upload'])) { 
+  
+    $filename = $_FILES["uploadfile"]["name"]; 
+    $tempname = $_FILES["uploadfile"]["tmp_name"];     
+    $folder = "userimages/".$filename; 
+  
+	//update the image in the database
+    $query = "UPDATE `panels` SET `data` = '$filename' WHERE `panels`.`id` = $GET['id']"; 
+  	mysqli_query($msqli, $query); 
+          
+    // Now let's move the uploaded image into the folder: image 
+    if (move_uploaded_file($tempname, $folder))  { 
+        $msg = "Image uploaded successfully."; 
+    }else{ 
+        $msg = "Failed to upload image."; 
+    } 
+  } 
+
 ?>
 
 <!doctype html>
@@ -61,7 +81,19 @@
 					echo $_GET["paneltype"];
 					echo " panel with id = ";
 					echo $_GET["id"];
-					echo ". <br>And the image currently being displayed is:  ";
+					echo ". ";
+
+					$query = "SELECT data FROM `panels` WHERE id = $GET['id']";
+					$result = mysqli_query($msqli, $query);
+					$row = mysqli_fetch_assoc($result);
+
+					if (mysqli_num_rows($result) == 1)	{				  
+						echo "<br>And the image currently being displayed is:  ";
+						echo "<img src=\"userimages/$row['data']\" alt=\"The Image being displayed on the panel.\">";
+					}
+					else{
+						  echo "<br>And there's no image currently being displayed on your panel. Please upload an image!";
+					}
                	?>
 			</h1>
 
