@@ -13,14 +13,15 @@
   
     $filename = $_FILES["uploadfile"]["name"]; 
     $tempname = $_FILES["uploadfile"]["tmp_name"];     
-    $folder = "userimages/".$filename; 
+	$folder = "userimages/";
+	$targetFile =  $folder.basename($filename);
   
 	//update the image in the database
     $query = "UPDATE panel SET data = '$filename' WHERE panels.id ='".$GET['id']."'"; 
   	mysqli_query($msqli, $query); 
           
     // Now let's move the uploaded image into the folder: image 
-    if (move_uploaded_file($tempname, $folder))  { 
+    if (move_uploaded_file($tempname, $targetFile))  { 
         $msg = "Image uploaded successfully."; 
     }else{ 
         $msg = "Failed to upload image."; 
