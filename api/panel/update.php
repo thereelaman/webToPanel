@@ -8,7 +8,7 @@
         $temperature = $_POST['temperature'];
         $brightness = $_POST['brightness'];
  
-	    $sql = "UPDATE panels SET (temperature, brightness) VALUES ($temperature, $brightness) WHERE id = $id AND token = $token";
+	    $sql = "UPDATE panels SET (temperature, brightness) VALUES ($temperature, $brightness) WHERE id = $id AND token = '$token'";
         
         if ($mysqli->query($sql) === TRUE) {
 		    echo "OK";
