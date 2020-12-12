@@ -17,7 +17,7 @@
             $query = "SELECT data FROM panels WHERE id = $id AND token = '$token'";
             $result = mysqli_query($mysqli, $query);
             $row = mysqli_fetch_row($result);
-
+            echo $row[0];
             $command = escapeshellcmd('python3 /var/www/thedisplay.studio/api/panel/imageToModule.py '.$row[0].' '.$id.' '.$module);
             $output = shell_exec($command);
             echo $output;
