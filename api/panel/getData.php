@@ -20,6 +20,7 @@
 
             $command = escapeshellcmd('/var/www/thedisplay.studio/api/panel/imageToModule.py '.$row[0].' '.$id.' '.$module);
             $output = shell_exec($command);
+            echo $output;
         }
         
         $query = "SELECT data FROM panelData WHERE panelID = $id AND module = '$module'";
