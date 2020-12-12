@@ -4,7 +4,8 @@ from PIL import Image
 import mysql.connector
 import sys
 
-im = Image.open(sys.argv[1], 'r')
+imagePath = "/var/www/thedisplay.studio/userimages/" + sys.argv[1]
+im = Image.open(imagePath, 'r')
 im = im.convert('RGB')
 
 width, height = im.size
