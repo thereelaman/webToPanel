@@ -6,6 +6,7 @@
         $id = $_GET['id'];
         $token = $_GET['token'];
         $module = $_GET['module'];
+        echo "page works";
 
         $query = "SELECT * FROM panelData WHERE token = $token AND module = '$module'";
         $result = mysqli_query($mysqli, $query);
