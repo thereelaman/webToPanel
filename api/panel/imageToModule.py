@@ -15,15 +15,15 @@ pixel_values = list(im.getdata())
 dataForPanel = ""
 
 if(sys.argv[3] == 1):
-    startRangeH = 0
-    startRangeW = 0
-    endRangeH = height/2
-    endRangeW = width
+    startRangeH = int(0)
+    startRangeW = int(0)
+    endRangeH = int(height/2)
+    endRangeW = int(width)
 else:
-    startRangeH = height/2
-    startRangeW = 0
-    endRangeH = height
-    endRangeW = width
+    startRangeH = int(height/2)
+    startRangeW = int(0)
+    endRangeH = int(height)
+    endRangeW = int(width)
 
 for y in range (startRangeH, endRangeH):
     dataForPanel += "\""
