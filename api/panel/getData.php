@@ -18,7 +18,7 @@
             $result = mysqli_query($mysqli, $query);
             $row = mysqli_fetch_row($result);
 
-            $command = escapeshellcmd('python3 /var/www/thedisplay.studio/api/panel/imageToModule.py '.$row[0].' '.$id.' '.$module);
+            $command = escapeshellcmd('python3 /var/www/thedisplay.studio/api/panel/imageToModule.py '.$row[0].' '.$id.' '.$module' '.$token);
             $output = shell_exec($command);
         }
         
