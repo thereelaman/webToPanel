@@ -13,7 +13,7 @@
         // if data doesn't exist, calculate it
         if(mysqli_num_rows($result) == 0){
 
-            echo "if condition works"
+            echo "if condition works";
             //get image name which is to be processed 
             $query = "SELECT data FROM panels WHERE id = $id AND token = '$token'";
             $result = mysqli_query($mysqli, $query);
