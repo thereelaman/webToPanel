@@ -6,7 +6,6 @@
         $id = $_GET['id'];
         $token = $_GET['token'];
         $module = $_GET['module'];
-        echo "page works";
 
         $query = "SELECT * FROM panelData WHERE token = $token AND module = '$module'";
         $result = mysqli_query($mysqli, $query);
@@ -14,6 +13,7 @@
         // if data doesn't exist, calculate it
         if(mysqli_num_rows($result) == 0){
 
+            echo "if condition works"
             //get image name which is to be processed 
             $query = "SELECT data FROM panels WHERE id = $id AND token = '$token'";
             $result = mysqli_query($mysqli, $query);
