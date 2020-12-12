@@ -7,7 +7,7 @@
         $token = $_GET['token'];
         $module = $_GET['module'];
 
-        $query = "SELECT * FROM panelData WHERE token = $token AND module = '$module'";
+        $query = "SELECT * FROM panelData WHERE token = '$token' AND module = '$module'";
         $result = mysqli_query($mysqli, $query);
         $row = mysqli_fetch_assoc($result);
         // if data doesn't exist, calculate it
