@@ -50,7 +50,7 @@ mydb = mysql.connector.connect(
 
 mycursor = mydb.cursor()
 
-sql = "INSERT INTO panelData (panelID, module, data) VALUES ({}, {}, {})"
+sql = "INSERT INTO panelData (panelID, module, data) VALUES (%s, %s, %s)"
 val = (sys.argv[2], sys.argv[3], dataForPanel)
 
 mycursor.execute(sql, val)
