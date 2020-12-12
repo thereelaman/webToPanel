@@ -13,13 +13,12 @@
         // if data doesn't exist, calculate it
         if(mysqli_num_rows($result) == 0){
 
-            echo "if condition works";
             //get image name which is to be processed 
             $query = "SELECT data FROM panels WHERE id = $id AND token = '$token'";
             $result = mysqli_query($mysqli, $query);
             $row = mysqli_fetch_row($result);
 
-            $command = escapeshellcmd('/var/www/thedisplay.studio/api/panel/imageToModule.py '.$row[0].' '.$id.' '.$module);
+            $command = escapeshellcmd('python3 /var/www/thedisplay.studio/api/panel/imageToModule.py '.$row[0].' '.$id.' '.$module);
             $output = shell_exec($command);
             echo $output;
         }
