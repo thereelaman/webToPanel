@@ -17,10 +17,10 @@
             $query = "SELECT data FROM panels WHERE id = $id AND token = '$token'";
             $result = mysqli_query($mysqli, $query);
             $row = mysqli_fetch_row($result);
-
-            $rawCommand = 'python3 /var/www/thedisplay.studio/api/panel/imageToModule.py '.$row[0].' '.$id.' '.$module' '.$token;
+            echo "loop still exec";
+            /*$rawCommand = 'python3 /var/www/thedisplay.studio/api/panel/imageToModule.py '.$row[0].' '.$id.' '.$module' '.$token;
             $command = escapeshellcmd($rawCommand);
-            $output = shell_exec($command);
+            $output = shell_exec($command);*/
         }
         
         $query = "SELECT data FROM panelData WHERE panelID = $id AND module = '$module'";
