@@ -10,7 +10,8 @@
         $query = "SELECT * FROM panelData WHERE token = '$token' AND module = '$module'";
         $result = mysqli_query($mysqli, $query);
         $row = mysqli_fetch_assoc($result);
-        echo "$result";
+        $numrows = mysqli_num_rows($result);
+        echo "$numrows";
         // if data doesn't exist, calculate it
         if(mysqli_num_rows($result) == 0){
 
@@ -18,7 +19,7 @@
             $query = "SELECT data FROM panels WHERE id = $id AND token = '$token'";
             $result = mysqli_query($mysqli, $query);
             $row = mysqli_fetch_row($result);
-            echo "loop still exec";
+
             /*$rawCommand = 'python3 /var/www/thedisplay.studio/api/panel/imageToModule.py '.$row[0].' '.$id.' '.$module' '.$token;
             $command = escapeshellcmd($rawCommand);
             $output = shell_exec($command);*/
