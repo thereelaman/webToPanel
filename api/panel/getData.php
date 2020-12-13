@@ -10,7 +10,7 @@
         $query = "SELECT * FROM panelData WHERE token = '$token' AND module = '$module'";
         $result = mysqli_query($mysqli, $query);
         $row = mysqli_fetch_assoc($result);
-        echo mysqli_num_rows($result);
+        echo "$result";
         // if data doesn't exist, calculate it
         if(mysqli_num_rows($result) == 0){
 
