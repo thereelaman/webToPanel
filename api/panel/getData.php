@@ -12,7 +12,7 @@
         $row = mysqli_fetch_row($result);
         $rowcount = mysqli_num_rows($result);
         echo $rowcount;
-
+        /*
         // if data doesn't exist, calculate it
         if(mysqli_num_rows($result) == 0){
 
@@ -21,10 +21,10 @@
             $result = mysqli_query($mysqli, $query);
             $row = mysqli_fetch_row($result);
             echo "loop still exec";
-            /*$rawCommand = 'python3 /var/www/thedisplay.studio/api/panel/imageToModule.py '.$row[0].' '.$id.' '.$module' '.$token;
+            $rawCommand = 'python3 /var/www/thedisplay.studio/api/panel/imageToModule.py '.$row[0].' '.$id.' '.$module' '.$token;
             $command = escapeshellcmd($rawCommand);
-            $output = shell_exec($command);*/
-        }
+            $output = shell_exec($command);
+        }*/
         
         $query = "SELECT data FROM panelData WHERE panelID = $id AND module = '$module'";
         $result = mysqli_query($mysqli, $query);
