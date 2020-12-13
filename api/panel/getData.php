@@ -11,7 +11,7 @@
         $result = mysqli_query($mysqli, $query);
         $row = mysqli_fetch_row($result);
         $rowcount = mysqli_num_rows($result);
-        echo $rowcount;
+        echo $query;
 
         // if data doesn't exist, calculate it
         if(mysqli_num_rows($result) == 0){
