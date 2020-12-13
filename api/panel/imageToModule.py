@@ -15,6 +15,7 @@ pixel_values = list(im.getdata())
 dataForPanel = ""
 
 if(sys.argv[3] == 1):
+    print("1")
     startRangeH = int(0)
     startRangeW = int(0)
     endRangeH = int(height/2)
