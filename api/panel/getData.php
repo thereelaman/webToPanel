@@ -9,7 +9,7 @@
         $module = $_GET['module'];
 
         $query = "SELECT * FROM panelData WHERE token = '$token' AND module = ".$module;
-        $result = mysqli_query($mysqli, $query);
+        $result = mysqli_query($mysqli, $query) or trigger_error("Query Failed! SQL: $query - Error: ".mysqli_error($mysqli), E_USER_ERROR);
         $row = mysqli_fetch_row($result);
         echo $row[0];
         /*
