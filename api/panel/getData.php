@@ -26,11 +26,11 @@
             $output = shell_exec($command);
         }*/
         
-        $query = "SELECT data FROM panelData WHERE panelID = $id AND module = '$module'";
+        $query = "SELECT data FROM panelData WHERE token = '$token' AND module = ".$module;
         $result = mysqli_query($mysqli, $query);
-        $row = mysqli_fetch_row($result);
+        $row = mysqli_fetch_assoc($result);
 
-        echo $row[0];
+        echo $row['data'];
                
     }
     else{
