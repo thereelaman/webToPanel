@@ -29,6 +29,7 @@
         $query = "SELECT data FROM panelData WHERE token = '$token' AND module = ".$module;
         $result = mysqli_query($mysqli, $query);
         $row = mysqli_fetch_assoc($result);
+        echo $query;
 
         echo $row['data'];
                
