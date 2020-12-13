@@ -16,11 +16,12 @@
         if(mysqli_num_rows($result) == 0){
 
             //get image name which is to be processed 
-            $query = "SELECT data FROM panels WHERE id = $id AND token = '$token'";
+            $query = "SELECT data FROM panels WHERE id = ".$id." AND token = '$token'";
             $result = mysqli_query($mysqli, $query);
             $row = mysqli_fetch_row($result);
 
             $rawCommand = 'python3 /var/www/thedisplay.studio/api/panel/imageToModule.py '.$row[0].' '.$id.' '.$module.' '.$token;
+            echo $rawCommand;
             $command = escapeshellcmd($rawCommand);
             $output = shell_exec($command);
         }
