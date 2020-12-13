@@ -1,5 +1,6 @@
 <?php
     include('../../lib/db.php');
+    
  
     if(!empty($_GET['id']) && !empty($_GET['token']) && !empty($_GET['module']))
     {
@@ -25,16 +26,16 @@
             $output = shell_exec($command);
         }*/
         
-        $query = "SELECT * FROM panelData WHERE token = '$token' AND module = ".$module;
+        $query = "SELECT data FROM panelData WHERE token = '$token' AND module = ".$module;
         $result = mysqli_query($mysqli, $query);
         $row = mysqli_fetch_assoc($result);
         echo $query;
         echo "<p>";
-        echo $row['token'];
+        echo $row['data'];
         echo "</p>";
                
     }
     else{
-        die("No POST Parameters passed.");
+        die("No GET Parameters passed.");
     }
 ?>
