@@ -30,8 +30,9 @@
         $result = mysqli_query($mysqli, $query);
         $row = mysqli_fetch_assoc($result);
         echo $query;
-
+        echo "<p>";
         echo $row['data'];
+        echo "</p>";
                
     }
     else{
